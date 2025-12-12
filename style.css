@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f2f5fa;
+}
+
+/* ENCABEZADO */
+header {
+  background: #4b8cf5;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+#menu-dias {
+  margin-top: 15px;
+}
+
+#menu-dias button {
+  background: white;
+  color: #4b8cf5;
+  border: none;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.25s;
+  cursor: pointer;
+  transform: translateY(0);
+}
+
+#menu-dias button:hover {
+  background: #e8efff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* CONTENEDOR */
+#contenedor-dia {
+  margin: 40px auto;
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+
+  /* animación al cambiar día */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.4s ease;
+}
+
+#contenedor-dia.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#titulo-dia {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* LISTA DE HORARIOS */
+#lista-horarios {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#lista-horarios li {
+  background: #eef7ff;
+  border: 1px solid #cddfff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 1.05rem;
+
+  /* Animación de aparición */
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: aparecer 0.35s forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación al eliminar */
+.eliminando {
+  animation: desaparecer 0.3s forwards;
+}
+@keyframes desaparecer {
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+/* Botón eliminar */
+.borrar {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  background: #ff4c4c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+/* FORMULARIO */
+#formulario {
+  display: flex;
+  gap: 10px;
+}
+
+#input-horario {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#btn-agregar {
+  background: #4b8cf5;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+#btn-agregar:hover {
+  transform: scale(1.05);
+}
+
+#btn-agregar:active {
+  transform: scale(0.95);
+}
