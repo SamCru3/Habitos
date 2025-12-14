@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f2f5fa;
+}
+
+/* HEADER */
+header {
+  background: #4b8cf5;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+#menu-dias {
+  margin-top: 15px;
+}
+
+#menu-dias a {
+  background: white;
+  color: #4b8cf5;
+  text-decoration: none;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: 0.25s;
+}
+
+#menu-dias a:hover {
+  background: #e8efff;
+  transform: translateY(-3px);
+}
+
+/* CONTENIDO */
+main {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.dia {
+  display: none;
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+  animation: aparecer 0.4s ease;
+}
+
+.dia:target {
+  display: block;
+}
+
+.dia h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.dia ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dia li {
+  background: #eef7ff;
+  border: 1px solid #cddfff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Animación */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
